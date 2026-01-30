@@ -4,8 +4,7 @@ import requests
 import io
 
 def generar_json():
-    # URL del Excel de Albacete (puedes cambiar el código 02 por otro si quieres)
-    url_excel = "https://geoportal.minetur.gob.es/QueGasolineraTieneElPrecioMasBajo/descargaPrecios?provincia=02"
+    url_excel = "https://geoportalgasolineras.es/resources/files/preciosEESS_es.xls"
     
     # Descargamos el archivo en memoria
     response = requests.get(url_excel)
