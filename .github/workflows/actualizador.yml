@@ -1,0 +1,26 @@
+name: Actualizar Precios
+on:
+  schedule:
+    - cron: '0 * * * *' # Se ejecuta cada hora en punto
+  workflow_dispatch: # Botón para ejecutarlo a mano
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Instalar librerias
+        run: pip install pandas openpyxl requests
+      - name: Procesar Datos
+        run: python procesar_gasolineras.py
+      - name: Subir JSON a GitHub
+        run: |
+          git config --global user.name 'Bot-Gasolinera'
+          git config --global user.email 'bot@gasolina.com'
+          git add gasolineras.json
+          git commit -m "Actualizacion automatica: $(date)" || exit 0
+          git push
