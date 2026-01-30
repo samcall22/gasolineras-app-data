@@ -44,7 +44,9 @@ def generar_json():
             'Precio diesel renovable': 'diesel_renovable',
             'Precio gasolina renovable': 'gasolina_renovable',
             'Longitud': 'longitud',
-            'Latitud': 'latitud'
+            'Latitud': 'latitud',
+            'Horario': 'horario',
+            'Tipo venta': 'tipo_venta'
         }
 
         # Renombrar y filtrar
