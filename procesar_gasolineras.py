@@ -9,7 +9,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def generar_json():
     # URL del Excel de Albacete
-    url_excel = "https://geoportal.minetur.gob.es/QueGasolineraTieneElPrecioMasBajo/descargaPrecios?provincia=02"
+    url_excel = "https://geoportalgasolineras.es/resources/files/preciosEESS_es.xls"
     
     # IMPORTANTE: Añadimos verify=False para saltar el error de SSL
     response = requests.get(url_excel, verify=False)
