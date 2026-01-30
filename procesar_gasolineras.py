@@ -26,7 +26,7 @@ def generar_json():
             'Municipio': 'municipio',
             'Localidad': 'localidad',
             'Dirección': 'direccion',
-            'Código postal': 'CP'
+            'Código postal': 'CP',
             'Márgen': 'margen',
             'Rótulo': 'rotulo',
             # Campos anteriores
