@@ -5,7 +5,7 @@ import json
 
 def generar_json():
     # URL oficial de descarga (XLS)
-    url = "https://geoportal.minetur.gob.es/asge/rest/exportaciones/precioCarburantesGB.xls"
+    url = "https://geoportalgasolineras.es/resources/files/preciosEESS_es.xls"
     
     # Header para evitar el error de formato/bloqueo
     headers = {
