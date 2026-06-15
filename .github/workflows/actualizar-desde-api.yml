@@ -1,0 +1,29 @@
+name: Actualizar Precios desde API
+
+on:
+  schedule:
+    - cron: '0 7,13,19 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descargar JSON de la API del Ministerio
+        run: |
+          curl -s "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/" \
+            -o gasolineras.json
+
+      - name: Verificar que el JSON es válido
+        run: |
+          python3 -c "import json; json.load(open('gasolineras.json'))" && echo "JSON válido"
+
+      - name: Subir JSON a GitHub
+        run: |
+          git config --global user.name 'Bot-Gasolinera'
+          git config --global user.email 'bot@gasolina.com'
+          git add gasolineras.json
+          git commit -m "Actualización API: $(date +'%Y-%m-%d %H:%M')" || exit 0
+          git push
