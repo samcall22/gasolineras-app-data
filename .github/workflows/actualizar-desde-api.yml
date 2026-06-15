@@ -14,7 +14,7 @@ jobs:
       - name: Descargar JSON de la API del Ministerio
         run: |
           curl -s "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/" \
-            -o gasolineras.json
+            -o gasolineras-api.json
 
       - name: Verificar que el JSON es válido
         run: |
