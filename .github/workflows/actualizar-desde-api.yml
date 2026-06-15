@@ -24,6 +24,6 @@ jobs:
         run: |
           git config --global user.name 'Bot-Gasolinera'
           git config --global user.email 'bot@gasolina.com'
-          git add gasolineras.json
+          git add gasolineras-api.json
           git commit -m "Actualización API: $(date +'%Y-%m-%d %H:%M')" || exit 0
           git push
